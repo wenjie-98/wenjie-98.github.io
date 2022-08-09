@@ -16,23 +16,21 @@
   <meta name="author" content="flovia_jie">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这是一篇测试文章">
+    <meta name="description" content="数组去重方法总结对目前所学的知识进行个小小的总结，今天总结一下数组去重的方。而且不同的方法会有不同的缺陷，比如不能复杂数据类型等，1，双重 for 循环遍历数组 123456789101112var arr &#x3D; [1, 1, 1, 2, 2];var newArr &#x3D; [];for (var i &#x3D; 0; i &lt; arr.length; i++) &amp;#123;  for (var j &#x3D; i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试文章">
-<meta property="og:url" content="http://example.com/2022/07/28/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="flovia_jie">
+<meta property="og:url" content="http://example.com/2022/08/09/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="flovia_jie">
-<meta property="og:description" content="这是一篇测试文章">
+<meta property="og:description" content="数组去重方法总结对目前所学的知识进行个小小的总结，今天总结一下数组去重的方。而且不同的方法会有不同的缺陷，比如不能复杂数据类型等，1，双重 for 循环遍历数组 123456789101112var arr &#x3D; [1, 1, 1, 2, 2];var newArr &#x3D; [];for (var i &#x3D; 0; i &lt; arr.length; i++) &amp;#123;  for (var j &#x3D; i">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/07/28/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/test.png">
-<meta property="article:published_time" content="2022-07-28T15:41:02.000Z">
-<meta property="article:modified_time" content="2022-07-28T15:45:18.331Z">
+<meta property="article:published_time" content="2022-08-09T02:11:55.898Z">
+<meta property="article:modified_time" content="2022-08-09T02:12:02.990Z">
 <meta property="article:author" content="flovia_jie">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/07/28/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/test.png">
   
   
   
-  <title>测试文章 - flovia_jie</title>
+  <title>flovia_jie</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="测试文章"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -225,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-28 23:41" pubdate>
-          2022年7月28日 晚上
+        <time datetime="2022-08-09 10:11" pubdate>
+          2022年8月9日 上午
         </time>
       </span>
     
@@ -237,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8 字
+          1.7k 字
         
       </span>
     
@@ -248,7 +246,7 @@
         
         
         
-          1 分钟
+          14 分钟
         
       </span>
     
@@ -294,13 +292,36 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">测试文章</h1>
+            <h1 style="display: none"></h1>
             
             
               <div class="markdown-body">
                 
-                <p>这是一篇测试文章</p>
-<img src="/2022/07/28/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/test.png" srcset="/img/loading.gif" lazyload class="">
+                <h2 id="数组去重方法总结"><a href="#数组去重方法总结" class="headerlink" title="数组去重方法总结"></a>数组去重方法总结</h2><p>对目前所学的知识进行个小小的总结，今天总结一下数组去重的方。而且不同的方法会有不同的缺陷，比如不能复杂数据类型等，<br>1，双重 for 循环遍历数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>];<br><span class="hljs-keyword">var</span> newArr = [];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.<span class="hljs-property">length</span>; i++) &#123;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = i + <span class="hljs-number">1</span>; j &lt; arr.<span class="hljs-property">length</span>; j++) &#123;<br>    <span class="hljs-keyword">if</span> (arr[i] == arr[j]) &#123;<br>      i++;<br>      j = i;<br>    &#125;<br>  &#125;<br>  newArr.<span class="hljs-title function_">push</span>(arr[i]);<br>&#125;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newArr);<br></code></pre></td></tr></table></figure>
+
+<p>2 通过设置标识位，遍历数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>];<br><span class="hljs-keyword">var</span> newArr = [];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.<span class="hljs-property">length</span>; i++) &#123;<br>  <span class="hljs-keyword">var</span> flag = <span class="hljs-literal">true</span>;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; j &lt; newArr.<span class="hljs-property">length</span>; j++) &#123;<br>    <span class="hljs-keyword">if</span> (arr[i] == newArr[j]) &#123;<br>      flag = <span class="hljs-literal">false</span>;<br>      <span class="hljs-keyword">break</span>;<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">if</span> (flag) &#123;<br>    newArr.<span class="hljs-title function_">push</span>(arr[i]);<br>  &#125;<br>&#125;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newArr);<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。</li>
+</ol>
+<p>如果没有找到匹配的字符串则返回 -1。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">2</span>, <span class="hljs-number">8</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">7</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>];<br><span class="hljs-keyword">var</span> newArr = [];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.<span class="hljs-property">length</span>; i++) &#123;<br>  <span class="hljs-keyword">if</span> (newArr.<span class="hljs-title function_">indexOf</span>(arr[i]) == -<span class="hljs-number">1</span>) &#123;<br>    newArr.<span class="hljs-title function_">push</span>(arr[i]);<br>  &#125;<br>&#125;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newArr);<br></code></pre></td></tr></table></figure>
+
+<p>4 同样 indexOf()方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">2</span>, <span class="hljs-number">8</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>];<br><span class="hljs-keyword">var</span> newArr = [];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.<span class="hljs-property">length</span>; i++) &#123;<br>  <span class="hljs-keyword">if</span> (arr.<span class="hljs-title function_">indexOf</span>(arr[i]) === i) &#123;<br>    <span class="hljs-comment">// 如果获取的元素的索引相等，则进入新数组，有重复的值时，</span><br>    <span class="hljs-comment">// 等号左边获取的是第一个重复值的索引，索引现在的i不会进入新数组中</span><br>    newArr.<span class="hljs-title function_">push</span>(arr[i]);<br>  &#125;<br>&#125;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newArr); <span class="hljs-comment">// 结果：[2, 8, 5, 0, 6, 7]</span><br></code></pre></td></tr></table></figure>
+
+<p>5 利用对象中属性是无序性的特点去重（对象中属性名不能重复）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>];<br><span class="hljs-keyword">var</span> newObj = &#123;&#125;;<br><span class="hljs-keyword">var</span> newArr = [];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.<span class="hljs-property">length</span>; i++) &#123;<br>  newObj[arr[i]] = <span class="hljs-number">9</span>; <span class="hljs-comment">//这里了arr[i]表示对象的属性，让arr中的元素等于对象中的属性去重</span><br>&#125;<br><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> newObj) &#123;<br>  <span class="hljs-comment">//循环对象中的属性，属性名是不会有重复的</span><br>  newArr.<span class="hljs-title function_">push</span>(<span class="hljs-title class_">Number</span>(k)); <span class="hljs-comment">//属性名是字符串形式，要转换成数字</span><br>&#125;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newArr);<br></code></pre></td></tr></table></figure>
+
+<p>6.利用 set 参数中的值是唯一的特点</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">30</span>, <span class="hljs-number">20</span>, <span class="hljs-number">10</span>];<br><span class="hljs-keyword">let</span> setArr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>(arr);<br><span class="hljs-keyword">let</span> newArr = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(setArr);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newArr);<br></code></pre></td></tr></table></figure>
+
+<p>7、 与第六种方式相同 ，运用了扩展运算符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>];<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>([...<span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>(arr)]);<br></code></pre></td></tr></table></figure>
+
+<p>这些数组去重的方法，不同的方法会有不同的缺陷，比如不能去重复杂数据类型等，或者是字符串数字等等，还有待完善…</p>
 
                 
               </div>
@@ -318,8 +339,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>测试文章</div>
-      <div>http://example.com/2022/07/28/测试文章/</div>
+      <div></div>
+      <div>http://example.com/2022/08/09/数组去重方法总结/</div>
     </div>
     <div class="license-meta">
       
@@ -331,7 +352,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月28日</div>
+          <div>2022年8月9日</div>
         </div>
       
       
@@ -361,18 +382,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/09/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" title="">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/28/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2022/07/28/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" title="测试文章">
+                        <span class="hidden-mobile">测试文章</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
